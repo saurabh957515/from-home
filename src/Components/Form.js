@@ -1,8 +1,15 @@
 import React from "react";
+import SelectInput from "./SelectInput";
 
-function htmlForm() {
+function Form() {
+  const stateOptions = [
+    { label: "State 1", value: "state1" },
+    { label: "State 2", value: "state2" },
+    { label: "State 3", value: "state3" },
+    // Add more options as needed
+  ];
   return (
-    <div>
+    <div className="w-2/3">
       <div className="flex space-x-4">
         <div className=" w-1/3  bg-[#D7D7D7]">Make Connection</div>
         <div className=" w-1/3 bg-[#D7D7D7]"> Office Territories</div>
@@ -13,7 +20,7 @@ function htmlForm() {
         <h3 className="mx-12  my-34 align-middle  font-black">Default</h3>
       </div>
       <div>
-        <htmlForm>
+        <form>
           <div className="space-y-12 mx-12">
             <div className="border-b border-gray-900/10 pb-12">
               <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
@@ -55,27 +62,20 @@ function htmlForm() {
 
                 <div className="sm:col-span-2">
                   <label
-                    htmlFor="region"
+                    htmlFor="state"
                     className="block text-sm font-medium leading-6 text-gray-900"
                   >
                     State
                   </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="region"
-                      id="region"
-                      autoComplete="address-level1"
-                      className="block w-full bg-[#F2F2F2] rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                  {/* 
-                  <label
-                    for="small"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    Small select
-                  </label> */}
+                  <SelectInput
+   label=''
+          name="region"
+          id="region"
+          options={stateOptions}
+          defaultValue="" // Pass an empty string as the defaultValue
+          autoComplete="address-level1"
+        />
+
                 </div>
 
                 <div className="sm:col-span-2">
@@ -92,6 +92,7 @@ function htmlForm() {
                       id="postal-code"
                       autoComplete="postal-code"
                       className="block w-full bg-[#F2F2F2] rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  
                     />
                   </div>
                 </div>
@@ -236,10 +237,10 @@ function htmlForm() {
               </div>
             </div>
           </div>
-        </htmlForm>
+        </form>
       </div>
     </div>
   );
 }
 
-export default htmlForm;
+export default Form;

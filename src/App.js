@@ -1,13 +1,13 @@
 // import "./App.css";
 
 // import Component1 from "./Components/Component1";
-import Form from "./Components/Form";
+// import Form from "./Components/Form";
+import Tab from "./Components/Tab";
 
 function App() {
   return (
     <div className="App">
-      {/* <Component1 /> */}
-      <Form />
+  <Tab/>
     </div>
   );
 }
